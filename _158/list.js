@@ -13,21 +13,12 @@ function StickyScroller(mainId, indexesClass, fakeIndexId) {
   var indexHeight = indexTitles[0].clientHeight;
   var listTopOffset = indexTitles[0].offsetTop;
   var downLimits = [];
-  var upLimits = [];
   var indexContents = [];
-
-  console.log('indexHeight', indexHeight);
-
-
 
   for(var elm of indexTitles) {
     downLimits.push(elm.offsetTop - listTopOffset);
-    upLimits.push(elm.offsetTop + indexHeight - listTopOffset);
-    //TODO: fix this up
   }
   $('.section-container').css("position", "relative");
-  console.log('downLimits',downLimits);
-  console.log('upLimits',upLimits);
 
   for (var txt of indexTitles) {
     indexContents.push(txt.innerText);
@@ -37,7 +28,6 @@ function StickyScroller(mainId, indexesClass, fakeIndexId) {
   var lastScroll = 0;
   mainList.scroll(function() {
     var currScroll = mainList.scrollTop();
-    console.log(currScroll);
     if(currScroll > lastScroll)
       scrollDown(currScroll);
     else
@@ -49,52 +39,49 @@ function StickyScroller(mainId, indexesClass, fakeIndexId) {
   /* Determins if there needs to be a change in the view
      when scrolling DOWN */
   var currIndex = 0;
+  var transitionDownComplete = true;
+  var transitionUpComplete = true;
   function scrollDown(scrollPos) {
+    if(!transitionUpComplete) {
+      currIndex--;
+      transitionUpComplete = true;
+    }
     if(scrollPos < downLimits[currIndex+1]) {
       if(scrollPos >= downLimits[currIndex+1]-indexHeight) {
         transitionFakeIndex(currIndex+1);
-        console.log('hide fake index');
+        transitionDownComplete = false;
       }
     } else {
-      changeFakeIndex(currIndex);
+      changeFakeIndex(currIndex+1, currIndex-1);
       currIndex++;
-      console.log('change fake content', currIndex);
-      /*var nextIndex = 0;
-      var flag = true;
-      for(var i=currIndex+1; i<downLimits.length; i++) {
-        if(scrollPos > downLimits[i]) {
-          nextIndex = i;
-          flag = true;
-        }
-      }
-      if(flag) {
-        console.log('change fake content', nextIndex);
-        changeFakeIndex(nextIndex);
-        currIndex = nextIndex;
-      } */
+      transitionDownComplete = true;
     }
   }
   /* Determins if there needs to be a change in the view
      when scrolling UP */
   function scrollUp(scrollPos) {
-    if(currIndex == 0) return null;
+    if(!transitionDownComplete) {
+      currIndex++;
+      transitionDownComplete = true;
+    }
     if(scrollPos <= downLimits[currIndex]) {
-      if(scrollPos >= downLimits[currIndex]-24) {
-        console.log('do soft change');
+      if(scrollPos >= downLimits[currIndex]-indexHeight) {
+        transitionFakeIndex(currIndex);
+        transitionUpComplete = false;
       } else {
-        console.log("do hard change");
-        changeFakeIndex(currIndex-1);
+        changeFakeIndex(currIndex-1, currIndex-1);
         currIndex--;
+        transitionUpComplete = true;
       }
     }
   }
 
 
-  function changeFakeIndex(index) {
-    fakeIndex.text(indexContents[index+1]);
+  function changeFakeIndex(nextIndex, prevIndex) {
+    fakeIndex.text(indexContents[nextIndex]);
     fakeIndex.removeClass("hidden");
-    $(sectionContainer[index-1]).css("padding-top", "0");
-    $(indexTitles[index-1]).removeClass("transition");
+    $(sectionContainer[prevIndex]).css("padding-top", "0");
+    $(indexTitles[prevIndex]).removeClass("transition");
   }
 
   function transitionFakeIndex(index) {
