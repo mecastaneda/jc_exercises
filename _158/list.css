@@ -1,0 +1,50 @@
+body {
+  padding: 0;
+  margin: 20;
+}
+
+.main-list {
+  background-color: rgb(210, 88, 19);
+  height: 200px;
+  width: 200px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+.fake-index {
+  position: absolute;
+  z-index: 100;
+}
+.fake-index.hidden {
+  visibility: hidden;
+}
+
+.index.title.transition {
+  position: absolute;
+  bottom: 0;
+}
+
+.title {
+  font-size: 1.2em;
+  padding: 1px 0 1px 3px;
+  background-color: rgb(227, 99, 59);
+  width: 182px;
+}
+
+.list-content {
+  background-color: rgb(227, 115, 60);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-content > li {
+  padding: 5px;
+  border-bottom: 1px solid rgb(152, 27, 22);
+}
+
+/*.section-container {
+  position: relative;
+  min-height: 1px;
+}*/
