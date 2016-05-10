@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>70.2 Moving the Ball from one side to the other</title>
+    <style media="screen">
+      #ball {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: green;
+        border-radius: 50px;
+        margin: auto 0;
+        top: 0;
+        left: 90vw;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    Click the green ball to move it.
+    <div id="ball"></div>
+  </body>
+  <script type="text/javascript">
+    var ball = document.getElementById("ball");
+    var goal  = 0;
+
+    ball.addEventListener('click', moveLeft);
+
+    function moveLeft() {
+      var pos =  parseInt(getComputedStyle(ball).left);
+      var motion = setInterval(function() {
+        pos += ((goal - pos)/3);
+        ball.style.left = pos + 'px';
+        if(pos <= goal+1) {
+          clearInterval(motion);
+          ball.style.left = goal + 'px';
+        }
+      }, 40);
+    }
+  </script>
+</html>
