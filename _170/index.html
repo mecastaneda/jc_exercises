@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>170. Modal Dialog With Mustache</title>
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-1.12.3.min.js" charset="utf-8"></script>
+    <script src="js/mustache.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Register a Cat Memorial</h1>
+    </header>
+
+    <div class="main">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="content">
+
+        <form id="form-register" class="register" action="#" method="post">
+
+          <h2>
+            We will create an online memorial for your deceased cat ^_^
+          </h2>
+
+          <div class="input-elm">
+            <label for="catname">Type the name of your cat</label>
+            <input type="text" name="catname" value="">
+          </div>
+
+          <div class="input-elm">
+            <label for="food">What food did your kitty liked</label>
+            <input type="text" name="food" value="">
+          </div>
+
+          <div class="input-elm">
+            <label for="food">What's the name of his/her favorite toy</label>
+            <input type="text" name="toy" value="">
+          </div>
+
+          <input type="button" value="Done" id="submmitBtn">
+
+          <div id="target">
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <h2>Copyright 2016</h2>
+    </footer>
+
+    <script id="template" type="x-tmpl-mustache">
+      <div id="modal-dialog">
+          <h2>Is this information correct?</h2>
+          <p>
+            Cat's name: {{ name }}
+          </p>
+          <p>
+            Cat's food: {{ food }}
+          </p>
+          <p>
+            Favorite toy: {{ toy }}
+          </p>
+          <div class="btns">
+              <input type="button" value="Yes" id="yesBtn">
+              <input type="button" value="No" id="noBtn">
+          </div>
+      </div>
+    </script>
+  </body>
+</html>

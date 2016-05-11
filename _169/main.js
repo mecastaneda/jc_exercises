@@ -54,7 +54,7 @@ Warrior.prototype = Object.create(Avatar.prototype);
 Sorcerer.prototype = Object.create(Avatar.prototype);
 Rogue.prototype = Object.create(Avatar.prototype);
 
-rogue = new Rogue("Link");
+var rogue = new Rogue("Link");
 rogue.attack();
 rogue.attack();
 rogue.printStats();
