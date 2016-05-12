@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>176. Paginated Divs</title>
+    <link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/form-style.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-1.12.3.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome to Now</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Careers</a>
+        <a href="#">FAQ</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+    <section>
+        <form class="main-form" action="#">
+          <div class="wrapper" id="wrapper">
+            <div class="form one">
+              <div class="legend">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+              </div>
+              <div class="question">
+                <label for="q1">How much do you like puppies?</label>
+                <input type="radio" name="q1" value="1">
+                <input type="radio" name="q1" value="2">
+                <input type="radio" name="q1" value="3">
+                <input type="radio" name="q1" value="4">
+                <input type="radio" name="q1" value="5">
+              </div>
+              <div class="question">
+                <label for="q2">How much do you like cacti?</label>
+                <input type="radio" name="q2" value="1">
+                <input type="radio" name="q2" value="2">
+                <input type="radio" name="q2" value="3">
+                <input type="radio" name="q2" value="4">
+                <input type="radio" name="q2" value="5">
+              </div>
+              <div class="question">
+                <label for="q3">How much would you like a puppie with cacti type fur?</label>
+                <input type="radio" name="q3" value="1">
+                <input type="radio" name="q3" value="2">
+                <input type="radio" name="q3" value="3">
+                <input type="radio" name="q3" value="4">
+                <input type="radio" name="q3" value="5">
+              </div>
+            </div>
+
+            <div class="form two">
+              <div class="legend">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+              </div>
+              <div class="question">
+                <label for="q4">How much do you like crossword puzzles?</label>
+                <input type="radio" name="q4" value="1">
+                <input type="radio" name="q4" value="2">
+                <input type="radio" name="q4" value="3">
+                <input type="radio" name="q4" value="4">
+                <input type="radio" name="q4" value="5">
+              </div>
+              <div class="question">
+                <label for="q5">How much do you like riding a bike?</label>
+                <input type="radio" name="q5" value="1">
+                <input type="radio" name="q5" value="2">
+                <input type="radio" name="q5" value="3">
+                <input type="radio" name="q5" value="4">
+                <input type="radio" name="q5" value="5">
+              </div>
+              <div class="question">
+                <label for="q6">How much would you like to ride a bike while solving a crossword puzzle?</label>
+                <input type="radio" name="q6" value="1">
+                <input type="radio" name="q6" value="2">
+                <input type="radio" name="q6" value="3">
+                <input type="radio" name="q6" value="4">
+                <input type="radio" name="q6" value="5">
+              </div>
+            </div>
+
+            <div class="form three hidden">
+              <div class="legend">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+              </div>
+              <div class="question">
+                <label for="q7">How much do you like beer?</label>
+                <input type="radio" name="q7" value="1">
+                <input type="radio" name="q7" value="2">
+                <input type="radio" name="q7" value="3">
+                <input type="radio" name="q7" value="4">
+                <input type="radio" name="q7" value="5">
+              </div>
+              <div class="question">
+                <label for="q8">How much do you like ice cream?</label>
+                <input type="radio" name="q8" value="1">
+                <input type="radio" name="q8" value="2">
+                <input type="radio" name="q8" value="3">
+                <input type="radio" name="q8" value="4">
+                <input type="radio" name="q8" value="5">
+              </div>
+              <div class="question">
+                <label for="q9">How much would you like a beer with ice cream?</label>
+                <input type="radio" name="q9" value="1">
+                <input type="radio" name="q9" value="2">
+                <input type="radio" name="q9" value="3">
+                <input type="radio" name="q9" value="4">
+                <input type="radio" name="q9" value="5">
+              </div>
+            </div>
+
+          </div>
+          <div class="form-controls">
+            <div class="ctrl previous">
+              <button type="button" disabled id="previousBtn">Back</button>
+            </div>
+            <div class="ctrl next">
+              <button type="button" id="nextBtn">Next</button>
+            </div>
+            <div class="ctrl end">
+              <button type="button" disabled id="endBtn">Submit</button>
+            </div>
+          </div>
+        </form>
+
+    </section>
+    <footer><h2>Copyright 2016</h2></footer>
+  </body>
+</html>
