@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 900px;
+  height: 100vh;
+}
+
+header {
+  height: 83px;
+  background-color: #3d89a0;
+  margin-bottom: 5px;
+}
+header > h1 {
+  margin-top: 0;
+  padding-left: 5px;
+}
+
+
+section {
+  min-height: 70vh;
+  background-color: rgb(143, 143, 143);
+  padding: 1px;
+}
+section > p {
+  column-count: 3;
+}
+footer {
+  padding: 5px 0;
+  background-color: rgb(146, 65, 149);
+  width: 900px;
+  margin-top: 5px;
+}
+footer > h2 {
+  margin: 0;
+  text-align: center;
+}

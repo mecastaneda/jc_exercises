@@ -1,0 +1,66 @@
+.menu {
+  text-align: center;
+  background-color: rgba(250, 250, 250, 0.2);
+  position: relative;
+  height: 25px;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+.menu > li {
+  display: inline-block;
+  width: 200px;
+  max-height: 25px;
+  transition: max-height 0.3s ease-out;
+}
+.menu > li:hover {
+  background-color: rgb(57, 136, 200);
+}
+.menu > li > a {
+  text-decoration: none;
+  color: #EEE;
+  margin-top: 3px;
+  display: inline-block;
+}
+.menu > li > a:visited {
+  color: #EEE;
+}
+.menu > li > a:hover {
+  color: #FFF;
+}
+.menu > .show {
+  max-height: 600px;
+}
+.sub {
+  visibility: hidden;
+  transition: color 0.3s ease-in;
+  list-style: none;
+  padding: 5px;
+  text-align: left;
+  color: rgba(0, 255, 255, 0);
+  width: 190px;
+  top: 25px;
+}
+.show > .sub {
+  visibility: visible;
+  color: rgba(255, 255, 255, 1);
+}
+.sub > li > a {
+  color: inherit;
+}
+.sub > li:not(.first) {
+  border-top: 1px solid #FFF;
+  margin-top: 10px;
+}
+.sub.one {
+  left: 40px;
+}
+.sub.two {
+  left: 255px;
+}
+.sub.three {
+  left: 473px;
+}
+.sub.four {
+  left: 689px;
+}
