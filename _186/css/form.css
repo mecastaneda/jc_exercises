@@ -1,0 +1,25 @@
+.x-form {
+  padding: 10px;
+}
+.x-form > .input-form {
+  margin-bottom: 5px;
+}
+.x-form > .submit {
+  height: 40px;
+}
+.x-form > .submit > button {
+  display: block;
+  float: right;
+  padding: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.input-form > label {
+  display: block;
+  margin-bottom: 3px;
+}
+.input-form > input {
+  display: block;
+  width: 100%;
+}

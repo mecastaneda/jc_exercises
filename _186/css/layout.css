@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+header {
+  height: 40px;
+  background-color: rgb(92, 214, 126);
+}
+.wrapper {
+  height: 40px;
+}
+
+.logo {
+  float: left;
+  height: 40px;
+  padding: 2px;
+}
+
+.logo > img {
+  height: 35px;
+}
+
+.main-menu {
+  max-width: 1000px;
+  overflow: hidden;
+  height: 40px;
+  padding-left: 20px;
+}
+.main-menu > a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.9em;
+  margin-right: 10px;
+}
+.main-menu > a:visited {
+  text-decoration: none;
+  color: #FFF;
+}
+.main-menu > a:hover {
+  text-decoration: underline;
+}
+
+.user-menu {
+  width: 150px;
+  float: right;
+  height: inherit;
+}
+.user-menu > a {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.3em;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+.user-menu > a:visited {
+  color: #FFF;
+}
+.user-menu > a:hover {
+  text-decoration: underline;
+}
+
+.user-menu > .anchor {
+  position: relative;
+}
+.anchor > #target {
+  position: absolute;
+  background-color: rgb(67, 180, 125);
+  top: 40px;
+  left: -130px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.anchor > #target.show {
+  opacity: 1;
+}
+
+section {
+  height: 90vh;
+  background-color: rgb(131, 88, 150);
+}
+footer {
+  height: 20px;
+  background-color: rgb(47, 165, 231);
+}

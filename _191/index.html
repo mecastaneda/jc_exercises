@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>191. Apearing DIV</title>
+    <style media="screen">
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(112, 141, 194);
+        visibility: hidden;
+      }
+      #id1 {
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Some text goes here</div>
+    <a id='id1'>Show</a>
+    <script type="text/javascript">
+      var btn = document.getElementById('id1');
+      var div = document.getElementsByTagName('div')[0];
+      btn.addEventListener('click', function() {
+        div.style.visibility = "visible";
+      })
+    </script>
+  </body>
+</html>

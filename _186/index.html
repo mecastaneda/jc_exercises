@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>186. Responsive Menu</title>
+    <link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/form.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-1.12.3.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <img src="assets/ppcom-white.svg" alt="" />
+        </div>
+        <div class="user-menu">
+          <div class="anchor">
+            <div id="target">
+            </div>
+          </div>
+          <a href="#" id="loginBtn">Login</a>
+          <a href="#" id="signupBtn">SignUp</a>
+        </div>
+        <div class="main-menu">
+          <a href="#">Buy</a>
+          <a href="#">Sell</a>
+          <a href="#">Send</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+    </section>
+
+    <footer>
+    </footer>
+
+
+    <script id="template-login" type="x-template">
+      <form class="x-form" action="#" method="post">
+        <div class="input-form">
+          <label for="username">Username</label>
+          <input type="username" name="username" value="">
+        </div>
+        <div class="input-form">
+          <label for="password">Password</label>
+          <input type="password" name="password" value="">
+        </div>
+        <div class="submit">
+          <button id='closeBtn' type="button" name="close">Close</button>
+          <button type="submit" name="button">Login</button>
+        </div>
+      </form>
+    </script>
+
+    <script id="template-signup" type="x-template">
+      <form class="x-form" action="#" method="post">
+        <div class="input-form">
+          <label for="username">Username</label>
+          <input type="username" name="username" value="">
+        </div>
+        <div class="input-form">
+          <label for="password">Password</label>
+          <input type="password" name="password" value="">
+        </div>
+        <div class="input-form">
+          <label for="new-password">Confirm password</label>
+          <input type="new-password" name="new-password" value="">
+        </div>
+        <div class="submit">
+            <button id='closeBtn' type="button" name="close">Close</button>
+            <button type="submit" name="button">SignUp</button>
+        </div>
+      </form>
+    </script>
+
+  </body>
+</html>

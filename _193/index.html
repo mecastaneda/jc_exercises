@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      p:nth-child(2n) {
+        visibility: hidden;
+      }
+      p:nth-child(1n) {
+        cursor: pointer;
+      }
+    </style>
+    <script src="jquery-1.12.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var toglers = $('p:nth-child(1n)');
+        var pees = $('p:nth-child(2n)');
+        toglers.click(function(evt) {
+          pees.css('visibility', 'hidden');
+          $(evt.target).next().css('visibility', 'visible');
+        });
+
+      })
+    </script>
+  </head>
+  <body>
+    <p>Toggle 1</p>
+    <p>I will be hidden or visible 1</p>
+
+    <p>Toggle 2</p>
+    <p>I will be hidden or visible 2</p>
+
+    <p>Toggle 3</p>
+    <p>I will be hidden or visible 3</p>
+
+    <p>Toggle 4</p>
+    <p>I will be hidden or visible 4</p>
+
+  </body>
+</html>
