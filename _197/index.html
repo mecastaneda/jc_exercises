@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>197. 3x3 DIV matrix</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+      }
+      .container {
+        width: 700px;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        height: 700px;
+        transform:translateY(-50%);
+      }
+      .container > div {
+        background-color: black;
+        display: table;
+        width: 200px;
+        height: 200px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        float: left;
+      }
+      .container > div:nth-last-child(-n+3) {
+        margin-bottom: 0;
+      }
+      .container > div:nth-child(3n) {
+        margin-right: 0;
+      }
+      .container > div > span {
+        display: table-cell;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><span>1</span></div><div><span>2</span></div><div><span>3</span></div><div><span>4</span></div><div><span id="fifth">5</span></div><div><span>6</span></div><div><span>7</span></div><div><span>8</span></div><div><span>9</span></div>
+    </div>
+    <script type="text/javascript">
+      window.boxChanger = (function() {
+        var fifth = document.getElementById('fifth');
+        function changeBox() {
+          setTimeout(function() {
+            fifth.innerText = 'I did it!';
+          }, 5000);
+        }
+        window.boxChanger = changeBox;
+        window.boxChanger();
+        return changeBox;
+      })();
+    </script>
+  </body>
+</html>

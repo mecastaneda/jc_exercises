@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>196. Bouncing Ball</title>
+    <style media="screen">
+      .container {
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        height: 500px;
+        width: 100px;
+        position: relative;
+        margin-top: 60px;
+      }
+      .ball {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(135, 143, 49);
+        position: absolute;
+        top: -50px;
+        left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="ball" class="ball"></div>
+    </div>
+    <script type="text/javascript">
+      var fps = 25;
+
+      var ball = document.getElementById('ball');
+
+      ball.style.top = getComputedStyle(ball).getPropertyValue('top');
+      var move = function(pos) {
+        ball.style.top = pos+'px';
+      }
+      var getPosition = function() {
+        return parseInt(ball.style.top);
+      }
+
+      var tops = [0, 50, 100, 150, 200, 250, 300, 350, 400, 425, 440, 445];
+
+      down(450);
+
+      function down(target) {
+        var s = 4096; // 8192
+        var id = setInterval(function() {
+          var current = getPosition();
+          var diff = Math.abs(target-current);
+          if(diff == 0) {
+            clearInterval(id);
+            if(tops.length)
+              up(tops.shift());
+          }
+          var nextPos = current+(diff/s);
+          move(nextPos);
+          s = s/2;
+        }, 1000/fps);
+      }
+
+      function up(target) {
+        var id = setInterval(function() {
+          var current = getPosition();
+          var diff = Math.abs(target-current);
+          if(!diff) {
+            clearInterval(id);
+            down(450);
+          }
+          var nextPos = current-(diff/2);
+          move(nextPos);
+        }, 1000/fps);
+      }
+
+    </script>
+  </body>
+</html>
