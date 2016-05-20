@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>202. Input Validation</title>
+    <style media="screen">
+      .container {
+        width: 200px;
+        padding: 15px;
+        background-color: rgb(197, 228, 226);
+      }
+      .input-container {
+        margin-bottom: 30px;
+      }
+      .input-container > label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .input-container > input {
+        width: 100%;
+      }
+      .container > form > .result > span {
+        display: none;
+      }
+      .container > form:invalid > .result > .invalid {
+        display: inline;
+        color: red;
+      }
+      .container > form:valid > .result > .valid {
+        display: inline;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <div class="input-container">
+            <label for="typein">Type a string to be validated</label>
+            <input id="inputz" type="text" name="typein" value="">
+        </div>
+        <div class="result">
+          <span class="invalid">Invalid</span>
+          <span class="valid">valid</span>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      var textInput = document.getElementById('inputz');
+      var rE = new RegExp(/1234|qwert|asdf/g);
+      textInput.addEventListener('input', function(evt) {
+        var val = textInput.value;
+        if(rE.test(val)) {
+          textInput.setCustomValidity('xx');
+          return;
+        }
+        if(val.length >= 4) {
+          for(var i=0, counter; i<val.length; i++) {
+            counter = 0;
+            for(var j=i+1; j<val.length; j++) {
+              if(val.charCodeAt(i)+1 == val.charCodeAt(j)) {
+                counter++;
+                i=j;
+              }
+              if(counter >= 3) {
+                textInput.setCustomValidity('xx');
+                return;
+              }
+              if(val.charCodeAt(i-1)+1 != val.charCodeAt(j)) {
+                break;
+              }
+            }
+          }
+        }
+        textInput.setCustomValidity('');
+      });
+
+    </script>
+  </body>
+</html>

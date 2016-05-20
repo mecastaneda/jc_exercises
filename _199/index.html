@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>199. Form</title>
+    <style media="screen">
+      .container {
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(240, 195, 247);
+      }
+      .form > .input-container {
+        margin-bottom: 10px;
+      }
+      .form > .input-container > label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form > .input-container > .input {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="#" method="post">
+        <div class="input-container">
+          <label for="string">String input</label>
+          <input id="string" type="text" class="input" name="string" value="">
+        </div>
+        <div class="input-container">
+          <label for="dropdown">Sorted dropdown</label>
+          <select id="dropdown" class="input" name="dropdown">
+
+          </select>
+        </div>
+        <div class="submit">
+          <button id="submitBtn" type="submit" name="button">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      var stringBox = document.getElementById('string');
+      var dropdown = document.getElementById('dropdown');
+      var submitBtn = document.getElementById('submitBtn');
+      var stringsArr = [];
+
+      submitBtn.addEventListener('click', function(evt) {
+        evt.preventDefault();
+        stringsArr.push(stringBox.value);
+        stringsArr.sort();
+        dropdown.innerHTML = "";
+        for(i=0; i<stringsArr.length; i++) {
+          var opt = document.createElement('option');
+          opt.innerText = stringsArr[i];
+          dropdown.options.add(opt);
+        }
+      });
+    </script>
+  </body>
+</html>
